@@ -14,6 +14,14 @@ Requirements:
 8. frameworks such as Boost or Qt shall not be used
 9. the LAME encoder should be used with reasonable standard settings (e.g. quality based encoding with quality level "good")
 
+## Highlights
+* Aquires and compiles lame static lib via cmake from the internet, for both Win and Linux.
+* Reads Wav file chunks into POD structs, and provides safe operators for comparison in these structs.
+* Templated mp3 encoding process, based on raw wav file format, uses constexpr if where possible.
+* MP3 encoding class asserts for usage with correct type_traits, throws human-readable compile error if used with unsupported type.
+* Delegates tasks using std::async.
+* Prevents task thrashing by submitting a limited number of tasks, based on std::thread::hardware_concurreny.
+
 ## Build requirements
 A C++ compiler with C++17 standard support and c++stdlib with filesystem.
 This means: GCC >= 8.0, MSVC > v141.

@@ -17,7 +17,7 @@ Requirements:
 ## Highlights
 * Aquires and compiles lame static lib via cmake from the internet, for both Win and Linux.
 * Reads Wav file chunks into POD structs, and provides safe operators for comparison in these structs.
-* Templated mp3 encoding process, based on raw wav file format, uses constexpr if where possible.
+* Templated mp3 encoding process, based on raw wav file format, uses `constexpr if` where possible.
 * MP3 encoding class asserts for usage with correct type_traits, throws human-readable compile error if used with unsupported type.
 * Delegates tasks using std::async.
 * Prevents task thrashing by submitting a limited number of tasks, based on std::thread::hardware_concurreny.
